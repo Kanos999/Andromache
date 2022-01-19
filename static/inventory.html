@@ -1,0 +1,56 @@
+<div class="left" ng-init="map.show = true;">
+	<div ng-show="currentItemsView == 'market' && map.show">
+		<img src="map.png" width="110%;">
+		<div id="mapButton-1" class="mapButton" ng-mouseover="map.hover('materials', $event)" ng-mouseleave="hoverBox.show = false" ng-click="map.click(true)"></div>
+		<div id="mapButton-2" class="mapButton" ng-mouseover="map.hover('food', $event)" ng-mouseleave="hoverBox.show = false" ng-click="map.click(true)"></div>
+		<div id="mapButton-3" class="mapButton" ng-mouseover="map.hover('energy', $event)" ng-mouseleave="hoverBox.show = false" ng-click="map.click(true)"></div>
+		<div id="mapButton-4" class="mapButton" ng-mouseover="map.hover('military', $event)" ng-mouseleave="hoverBox.show = false" ng-click="map.click(true)"></div>
+	</div>
+
+	<div id="itemsList" ng-show="currentItemsView == 'inventory'">
+		<div id="bg"></div>
+		<div class="title" style="margin-top: -42px!important">INVENTORY</div>
+		<div ng-repeat="items in team.items" ng-mouseover="itemHover(items)" class="itemInList">
+			{{items.name}}
+			<div class="buySellButton"></div>
+		</div>
+	</div>
+
+	<div id="itemsList" ng-show="itemsList.show && currentItemsView == 'market'">
+		<div id="bg"></div>
+		<div class="title" style="margin-top: -42px!important">ITEMS > {{currentCategory}}</div>
+		<div ng-repeat="items in description.category[currentCategory]" ng-mouseover="itemHover(items)" class="itemInList hoverEffect">
+			{{items.name}}
+			<div class="buySellButton" ng-click="dialogueShowing(items, 'sell')">-</div>
+			<div class="buySellButton" ng-click="dialogueShowing(items, 'buy')">+</div>
+		</div>
+		<div class="titleBelow hoverEffect" ng-click="map.click(false)">BACK</div>
+	</div>
+
+	<div ng-show="itemDialogue.show" id="itemDialogue">
+		<div id="bg"></div>
+		<div class="title" style="margin-top: -42px!important">{{itemDialogue.title}}</div>
+		<div class="submitButton--Yes hoverEffect" ng-click="itemDialogue.submit(true)">Yes</div>
+		<div class="submitButton--No hoverEffect" ng-click="itemDialogue.submit(false)">No</div>
+	</div>
+</div>
+
+
+<div class="inventoryButton hoverEffect" ng-click="currentItemsView = 'inventory'" ng-init="currentItemsView = 'market'" style="border-right: {{currentItemsView == 'inventory' ? 'solid 10px #00C853' : ''}}">Inventory</div>
+<div class="inventoryButton hoverEffect" ng-click="currentItemsView = 'market'; map.click(false)" style="border-right: {{currentItemsView == 'market' ? 'solid 10px #00C853' : ''}}">Market</div>
+
+
+<div id="descriptionBox" ng-show="categoryOrItem == 'category'">
+    <div class="title" style="margin-top: -42px!important">ABOUT > {{currentCategory}}</div>
+    <div class="descriptionText" ng-repeat="item in description.category[currentCategory]">{{item.name}}</div>
+</div>
+
+<div id="descriptionBox" ng-show="categoryOrItem == 'item'">
+	<div class="title" style="margin-top: -42px!important">DESCRIPTION > {{description.items.name}}</div>
+	<div class="descriptionText">{{description.items.description}}</div>
+	<div class="descriptionText"> > COST: {{description.items.cost}}</div>
+	<div class="descriptionText"> > AVAILABLE: {{description.items.available}}</div>
+	<div class="descriptionText"> > MONEY: {{team.money}}</div>
+</div>
+
+

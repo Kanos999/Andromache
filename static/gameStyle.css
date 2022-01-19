@@ -1,0 +1,54 @@
+@font-face {
+    font-family: Montserrat;
+    src: url("Montserrat.ttf");
+    font-weight: 0.2;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    color: #3c4146;
+    background-color: #EEE;
+    display: block;
+    text-align: center;
+    font-family: Montserrat;
+}
+
+input {
+    padding: 12px;
+    border-radius: 30px;
+    width: 200px;
+    border: none;
+    margin-top: 200px;
+    outline: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #3c4146;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+input:focus {
+    box-shadow: 0 2px 4px grey;
+}
+
+#button {
+    background-color: #3c4146;
+    color: #EEE;
+    width: 200px;
+    padding: 12px;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 30px;
+    margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    left: auto;
+    right: auto;
+    cursor: pointer;
+    box-shadow: 0 8px 0 black;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+#button:hover {
+    box-shadow: 0 4px 0 black;
+    margin-top: 24px;
+}

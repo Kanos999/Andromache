@@ -1,0 +1,443 @@
+@font-face {
+    font-family: arcade;
+    src: url("ARCADE.TTF");
+}
+
+body {
+    font-family: 'VT323', monospace!important;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #000;
+    display: block;
+    text-align: center;
+    overflow-y: auto;
+    color: #18FF62 !important;
+    text-shadow: 0 0 2px rgba(10, 255, 10, .8) !important;
+    transition: all 0.1s;
+}
+
+body::-webkit-scrollbar {
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #71a682;
+}
+
+.hoverEffect:hover {
+    cursor: pointer;
+    background-color: #00C853;
+    color: rgb(43,54,42);
+    box-shadow: 0 0 4px rgba(10, 255, 10, 1) !important;
+}
+
+#bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0!important;
+    left: 0!important;
+    pointer-events: none;
+}
+
+#bg:before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: -webkit-linear-gradient(#14D20A 50%, #000 50%);
+    background-size: 100% 4px;
+    background-repeat: repeat-y;
+    opacity: .14;
+    box-shadow: inset 0 0 10px 10px rgba(0, 0, 0, .8);
+    border-radius: 20px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+#bg:after{
+    content: '';
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: -webkit-radial-gradient(ellipse, center cover, rgba(0, 0, 0, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #00C853;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #00C853;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #00C853;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #00C853;
+}
+
+::-webkit-scrollbar {
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #71a682;
+}
+
+#login {
+    margin: auto;
+    left: 0;
+    right: 0;
+    width: 30%!important;
+    height: auto;
+    border: solid #71a682 2px;
+    padding: 24px;
+    position: absolute;
+    top: 20%;
+    box-shadow: 0 0 4px rgba(10, 255, 10, 1) !important;
+}
+
+#inputContainer {
+    width: 100%;
+    position: absolute;
+    padding: 16px 0 16px 0;
+    font-size: 16pt;
+    height: auto;
+}
+
+input {
+    background-color: transparent!important;
+    border: 0;
+    transition: all 0.1s;
+    caret-color: #18FF62;
+    color: #18FF62;
+    position: relative;
+    float: left;
+    font-family: 'VT323', monospace!important;
+    font-size: 16pt;
+    margin-top: -1px!important;
+    margin-left: 8px;
+    text-shadow: 0 0 2px rgba(10, 255, 10, .8) !important;
+}
+input:focus {
+    outline: none;
+    text-decoration: underline!important;
+}
+label {
+    width: auto;
+    position: relative;
+    float: left;
+}
+
+#submitButton {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    box-shadow: 0 0 2px rgba(10, 255, 10, .8) !important;
+    margin-top: 64px;
+    width: 100%!important;
+    font-weight: bold;
+    transition: all 0.1s;
+    font-size: 18pt;
+}
+
+#myPage {
+    width: 100%;
+    height: 100%;
+}
+
+.dim {
+    width: 100%;
+    height: 100%;
+    position: absolute!important;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 6!important;
+    top: 0!important;
+}
+
+
+
+
+
+
+#headerDiv {
+    height: auto;
+    width: 100%;
+    background-color: transparent;
+    font-size: 14pt;
+    text-align: left;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    z-index: 5;
+    padding-left: 24px;
+}
+
+.left {
+    width: 40%;
+    position: absolute;
+    right: 50%;
+}
+
+.right {
+    height: auto;
+    width: 40%;
+    position: absolute;
+    left: 50%;
+}
+
+#leaderboard {
+    margin: 12px;
+    padding: 24px;
+    text-align: center;
+    font-size: 18pt;
+    border: solid #71a682 2px;
+    box-shadow: 0 0 2px rgba(10, 255, 10, .8)!important;
+    max-height: 70%;
+    overflow-y: scroll;
+}
+
+.teamList {
+    font-size: 15pt;
+    padding: 14px;
+    text-align: left;
+    font-weight: normal;
+}
+
+#controls {
+    padding: 24px;
+    text-align: center;
+    font-size: 15pt;
+    border: solid #71a682 2px;
+    box-shadow: 0 0 2px rgba(10, 255, 10, .8) !important;
+    margin: 12px 12px 36px;
+}
+
+.controlsList {
+    font-size: 15pt;
+    padding: 18px;
+    text-align: left;
+    font-weight: normal;
+    transition: all 0.1s;
+}
+
+#tasks {
+    margin: 12px;
+    padding: 24px;
+    text-align: center;
+    font-size: 18pt;
+    border: solid #71a682 2px;
+    box-shadow: 0 0 2px rgba(10, 255, 10, .8) !important;
+}
+
+#manageControlDialogue {
+    background-color: #000;
+    margin: auto;
+    border: solid #71a682 2px;
+    left: 0;
+    right: 0;
+    width: 60%!important;
+    height: auto!important;
+    font-size: 22pt;
+    position: absolute;
+    top: 10%;
+    box-shadow: 0 0 2px rgba(10, 255, 10, .8) !important;
+    z-index: 7;
+    padding: 48px 24px 48px;
+    min-height: 40%;
+	line-height: 1.4;
+}
+
+#itemsList {
+    background-color: #000;
+    margin: auto;
+    border: solid #71a682 2px;
+    top: 0!important;
+    width: 100%!important;
+    height: auto;
+    font-size: 18pt;
+    position: absolute;
+    box-shadow: 0 0 2px rgba(10, 255, 10, .8) !important;
+    z-index: 10;
+    padding: 24px 24px 24px;
+    margin-top: 20px;
+}
+
+.inventoryButton {
+    position: relative;
+    padding: 12px;
+    margin-top: 4px!important;
+    width: 40%;
+    left: 60%;
+    box-shadow: 0 0 2px rgba(10, 255, 10, .8) !important;
+    transition: all 0.1s;
+}
+
+#descriptionBox {
+    border: solid #71a682 2px;
+    margin-top: 28px;
+    padding: 24px;
+    position: relative;
+    width: 32%;
+    left: 60%;
+    box-shadow: 0 0 2px rgba(10, 255, 10, .8) !important;
+}
+
+#alertDialogue {
+    background-color: #000;
+    margin: auto;
+    border: solid #71a682 2px;
+    left: 0;
+    right: 0;
+    width: 60%!important;
+    height: auto;
+    font-size: 18pt;
+    position: absolute;
+    top: 10%;
+    box-shadow: 0 0 2px rgba(10, 255, 10, .8) !important;
+    z-index: 7;
+    padding: 24px 24px 48px;
+}
+.alertSymbol {
+    font-size: 2pt;
+    line-height: 2pt;
+    margin-bottom: 12px;
+}
+
+.title {
+    position: absolute;
+    margin-left: -14px;
+    padding: 0 6px 0 6px;
+    margin-top: -36px;
+    background-color: #000;
+    font-size: 18pt;
+}
+
+.titleBelow {
+    position: absolute;
+    margin-right: 28px;
+    padding: 0 6px 0 6px;
+    margin-bottom: -18px;
+    bottom: 0;
+    right: 0;
+    background-color: #000;
+    transition: 0.1s;
+    font-size: 18pt;
+}
+
+.terminal {
+    margin: 12px;
+    font-size: 1pt;
+    line-height: 1pt;
+}
+
+.descriptionText {
+	padding: 6px;
+	font-size: 15pt;
+	text-align: left;
+	font-weight: normal;
+    transition: all 0.1s;
+}
+
+.itemInList {
+    padding: 12px;
+    transition: 0.1s;
+	font-size: 15pt;
+	text-align: left;
+	font-weight: normal;
+}
+
+.buySellButton {
+	position: relative;
+	float: right;
+	font-size: 28pt;
+	margin-left: 18px;
+	margin-top: -12px!important;
+}
+
+#itemDialogue {
+    background-color: #000;
+    margin: auto;
+    border: solid #71a682 2px;
+    left: 0;
+    right: 0;
+    width: 80%!important;
+    height: auto;
+    margin-bottom: 20px;
+    font-size: 18pt;
+    position: absolute;
+    box-shadow: 0 0 2px rgba(10, 255, 10, .8) !important;
+    z-index: 8;
+    padding: 24px 24px 48px;
+}
+
+.submitButton--Yes {
+    width: 40%;
+    right: 50%;
+    position: absolute;
+    transition: 0.1s;
+}
+.submitButton--No {
+    width: 40%;
+    left: 50%;
+    position: absolute;
+    transition: 0.1s;
+}
+
+
+.mapButton {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    z-index: 10;
+    opacity: 0.6;
+    margin-left: -10px;
+    margin-top: -10px;
+}
+
+#mapButton-1 {
+    top: 56%;
+    left: 24%;
+}
+
+#mapButton-2 {
+    top: 17%;
+    left: 62%;
+}
+
+#mapButton-3 {
+    top: 80%;
+    left: 81%;
+}
+
+#mapButton-4 {
+    top: 33%;
+    left: 96.5%;
+}
+
+#hoverBox {
+    position: absolute;
+    padding: 6px;
+    border: solid #71a682 2px;
+    background-color: #000;
+    z-index: 20;
+    pointer-events: none!important;
+    opacity: 0.8;
+}
+
+#gameLeaderboard {
+    position: absolute!important;
+    z-index: 5000!important;
+    top: 0!important;
+    right: 0!important;
+    background-color: black;
+    color: green!important;
+    opacity: 0.7!important;
+    width: 200px!important;
+    padding: 24px!important;
+    font-size: 18pt;
+}

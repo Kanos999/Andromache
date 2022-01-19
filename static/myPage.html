@@ -1,0 +1,72 @@
+<html ng-app="myPage">
+
+    <head>
+        <title>Sharc</title>
+        <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+        <link href="movement.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="js/angular-min.js"></script>
+        <script type="text/javascript" src="js/angular-cookies.min.js"></script>
+        <script src="js/ng-socket-io.js"></script>
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-deep_orange.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <script type="text/javascript" src="js/jquery-min.js"></script>
+		<script type="text/javascript" src="js/html2canvas.js"></script>
+		<script type="text/javascript" src="js/glitch.js"></script>
+        <script type="text/javascript" src="js/socket.js"></script>
+        <script src="js/material.min.js"></script>
+        <script type="text/javascript" src="js/myPageManager.js"></script>
+    </head>
+
+    <body ng-controller="myPageController" class="glitch" data-text="GLITCH">
+        <div id="headerDiv">
+            !# System.Root.$~admin -access.................................<br />
+            Initialising KnomShell 3000 v1.0...............................
+        </div>
+
+        <div id="bg"></div>
+
+        <div class="left" style="top: 100px;">
+            <div id="leaderboard">
+                <div class="title">LEADERBOARD</div>
+                <div ng-repeat="thisTeam in teamsList | orderBy: thisTeam.points" class="teamList">
+                    {{thisTeam.name}}, {{thisTeam.points}} points
+                </div>
+            </div>
+        </div>
+
+        <div class="right" style="top: 100px;">
+            <div id="controls">
+                <div class="title">CHALLENGES</div>
+                <div class="controlsList hoverEffect" ng-click="manageControlDialogue('inventory')">Inventory + Economics</div>
+                <div class="controlsList hoverEffect" ng-click="manageControlDialogue('fuel')">Fuel</div>
+                <div class="controlsList hoverEffect" ng-click="questionsButtonClicked()" id="questionsButton">Critical Questions</div>
+                <div class="controlsList hoverEffect" ng-click="manageControlDialogue('tournament')">Multiplayer Tournament</div>
+                <div class="controlsList hoverEffect" ng-click="manageControlDialogue('transmission')" ng-show="transmissionShow">Alien Transmission Translation</div>
+                <!--div class="controlsList hoverEffect" ng-click="manageControlDialogue('survey')">Survey</div-->
+            </div>
+            <div id="tasks">
+                <div class="title">COMPLETED CHALLENGES</div>
+                <div class="controlsList" ng-repeat="task in tasksCompleted">{{task}}</div>
+            </div>
+        </div>
+
+        <div class="dim" ng-click="manageControlDialogueShow = false" ng-show="manageControlDialogueShow || alertDialogueShow"></div>
+
+        <div id="manageControlDialogue" ng-show="manageControlDialogueShow">
+            <div id="bg"></div>
+            <div class="title" style="margin-top: -66px!important">CHALLENGE > {{currentControls}}</div>
+            <div ng-include="currentControls + '.html'"></div>
+            <div class="titleBelow hoverEffect" ng-click="manageControlDialogueShow = false">CLOSE</div>
+        </div>
+
+        <div id="alertDialogue" ng-show="alertDialogueShow">
+            <div id="bg"></div>
+            <div ng-include="'alertSymbol.html'" class="alertSymbol"></div>
+            ALERT! {{alertDialogueMessage}}! m-
+            <div class="titleBelow hoverEffect" ng-click="alertDialogueShow = false">CLOSE</div>
+        </div>
+
+        <div id="hoverBox" ng-show="hoverBox.show" ng-style="{'left': hoverBox.x, 'top': hoverBox.y}">Click to buy {{currentCategory}}</div>
+
+    </body>
+</html>

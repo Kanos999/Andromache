@@ -1,0 +1,22 @@
+<html ng-app="gamePage">
+    <head>
+        <title>Socket Game</title>
+        <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+        <link href="movement.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="js/angular-min.js"></script>
+        <script type="text/javascript" src="js/angular-cookies.min.js"></script>
+        <script src="js/ng-socket-io.js"></script>
+        <script src="js/p5.min.js"></script>
+        <script type="text/javascript" src="js/jquery-min.js"></script>
+        <script src="js/socket.js"></script>
+        <script src="js/game.js"></script>
+
+    </head>
+    <body ng-controller="gamePageController">
+		<div id="gameLeaderboard">
+			<ol>
+				<li ng-repeat="team in teams" style="text-align: left;">{{team.game}} - {{team.name}}</li>
+			</ol>
+		</div>
+    </body>
+</html>

@@ -1,0 +1,122 @@
+<div class="left" style="top: 20px;">
+    <div id="brief">
+        <div class="title">BRIEFING</div>
+        <div class="briefList">
+            An atmosphere is a collection of gases surrounding a celestial body [a naturally occurring physical, entity, structure or object in the observable universe}. For humans, all that is needed within these atmospheres is oxygen, but at the right concentration, lest oxygen toxicity [an illness resulting from the over-consumption of oxygen, usually from artificial sources such as breathing tanks]. Therefore, to suit our evolutionary biology, any planet or habitat we hope to call home should have be somewhat similar to our home planet, Earth. The atmosphere should then be similar in concentrations to what is seen in below: <br>
+            <table>
+                <tr style="font-weight: bold">
+                    <td>Gas</td>
+                    <td>Quantity (%)</td>
+                </tr>
+                <tr>
+                    <td>Oxygen</td>
+                    <td>20.946</td>
+                </tr>
+                <tr>
+                    <td>Nitrogen</td>
+                    <td>78.084</td>
+                </tr>
+                <tr>
+                    <td>Carbon Dioxide</td>
+                    <td>0.035</td>
+                </tr>
+                <tr>
+                    <td>Water</td>
+                    <td>~1.04</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="right" style="top: 20px;">
+    <div id="reference">
+        <div class="tableContainer">
+            <table>
+                <tr style="font-weight: bold">
+                    <td>Di Wie</td>
+                    <td>Quantity (%)</td>
+                </tr>
+                <tr>
+                    <td>Oxygen</td>
+                    <td>26</td>
+                </tr>
+                <tr>
+                    <td>Nitrogen</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td>Sulfur Dioxide **</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td>Ammonia **</td>
+                    <td>4</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="tableContainer">
+            <table>
+                <tr style="font-weight: bold">
+                    <td>Di Ex</td>
+                    <td>Quantity (%)</td>
+                </tr>
+                <tr>
+                    <td>Nitrogen</td>
+                    <td>31</td>
+                </tr>
+                <tr>
+                    <td>Oxygen</td>
+                    <td>28</td>
+                </tr>
+                <tr>
+                    <td>Hydrocarbons ^^</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <td>Helium **</td>
+                    <td>0.4</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="tableContainer">
+            <table>
+                <tr style="font-weight: bold">
+                    <td>Andromache</td>
+                    <td>Quantity (%)</td>
+                </tr>
+                <tr>
+                    <td>Oxygen</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>Nitrogen</td>
+                    <td>41</td>
+                </tr>
+                <tr>
+                    <td>Argon</td>
+                    <td>10</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="tableContainer">
+            <table>
+                <tr><td>** Lethal at quantities over ~10%</td></tr>
+                <tr><td>^^ Lethal at quantities over ~25%</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="question-answer">
+        <div class="title">RESPONSE</div>
+        Read the information on atmosphere and select which planets have an appropriate
+        atmosphere.
+        <div class="answerList" ng-click="clickAnswer(false, 1)" id="answer1">A) Di Wie</div>
+        <div class="answerList" ng-click="clickAnswer(true, 2)" id="answer2">B) Andromache</div>
+        <div class="answerList" ng-click="clickAnswer(false, 3)" id="answer3">C) Di Ex</div>
+        <div class="titleBelow" ng-click="submitAnswer(answer)">Submit</div>
+    </div>
+</div>

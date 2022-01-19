@@ -1,0 +1,25 @@
+<div class="left" style="top: 20px;">
+    <div id="brief">
+        <div class="title">BRIEFING</div>
+        <div class="briefList">
+            The location mainly deals with a planet’s relation to the Goldilocks Zone [an orbital region around a sun in which it falls in the correct area in terms of temperature for carbon-based life to develop]. When the planet is too hot, the gases may heat up until they cannot be contained by the gravity; so shoot off into space, and if it is too cold, some essential gases can liquify and/or become too heavy, creating dense clouds, often poisonous to humans.
+            Furthermore, the temperatures affect liveability. The human body can only deal with small variations from its desired temperature; ~37 ֯ . Therefore, the optimum range is between 15 - 40 degrees.
+        </div>
+    </div>
+</div>
+
+<div class="right" style="top: 20px;">
+    <div id="reference">
+        <img src="questions/solarsystem.png" width="100%" height="40%">
+    </div>
+    <div id="question-answer">
+        <div class="title">RESPONSE</div>
+        Here is a 2D cross-section of the solar system with orbit (white lines), asteroid belts (grey
+        area) &amp; habitable zone (green area) all filled in. We need to first narrow down the habitable
+        planets by selecting all the ones that have orbits entirely in the habitability zone.
+        <div class="answerList" ng-click="clickAnswer(false, 1)" id="answer1">A) ABCD</div>
+        <div class="answerList" ng-click="clickAnswer(false, 2)" id="answer2">B) CE</div>
+        <div class="answerList" ng-click="clickAnswer(true, 3)" id="answer3">C) BCD</div>
+        <div class="titleBelow" ng-click="submitAnswer(answer)">Submit</div>
+    </div>
+</div>
